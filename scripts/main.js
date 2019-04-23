@@ -1,23 +1,28 @@
 window.onload = function () {
-    let regButton = document.querySelector("main > button");
+    var regButton = document.querySelector("main > button");
     regButton.onclick = registerStudent;
 };
 function registerStudent() {
-    let nextStudent = getStudent();
+    var nextStudent = getStudent();
     displayStudent(nextStudent);
 }
 function getStudent() {
-    let newStu = new Student();
+    var newStu = new Student();
     newStu.firstName = document.getElementById("first-name").value;
     newStu.lastName = document.getElementById("last-name").value;
     return newStu;
 }
 function displayStudent(currStudent) {
-    alert(currStudent.firstName + " " + currStudent.lastName);
+    var studentLi = document.createElement("li");
+    studentLi.innerText = currStudent.firstName + " " + currStudent.lastName;
+    document.querySelector("#roster > ul").appendChild(studentLi);
 }
-class Student {
-}
-let testStu = new Student();
+var Student = (function () {
+    function Student() {
+    }
+    return Student;
+}());
+var testStu = new Student();
 testStu.firstName = "Kelsey";
 testStu.lastName = "Bonnicksen";
 testStu.dateOfBirth = new Date(1995, 2, 6);

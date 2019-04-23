@@ -21,7 +21,10 @@ function getStudent():Student{
 }
 
 function displayStudent(currStudent:Student){
-    alert(currStudent.firstName + " " + currStudent.lastName);
+    let studentLi:HTMLLIElement = document.createElement("li");
+    studentLi.innerText = currStudent.firstName + " " + currStudent.lastName;
+    //Getting u.list and appending the new li
+    document.querySelector("#roster > ul").appendChild(studentLi);
 }
 
 /**
