@@ -9,6 +9,9 @@ function registerStudent(){
     displayStudent(nextStudent);
 }
 
+/**
+ * Gets user input from the form and wraps it in a student object
+ */
 function getStudent():Student{
     let newStu = new Student();
     newStu.firstName = (<HTMLInputElement>document.getElementById("first-name")).value;
