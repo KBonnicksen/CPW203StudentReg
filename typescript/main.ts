@@ -23,6 +23,15 @@ function getStudent():Student{
 function displayStudent(currStudent:Student){
     let studentLi:HTMLLIElement = document.createElement("li");
     studentLi.innerText = currStudent.firstName + " " + currStudent.lastName;
+    //remove an student from register when you click on them?
+    studentLi.onclick = function(){
+        let agree = confirm("Are you sure you want to delete?");
+        if(agree){
+            let currItem = <HTMLLIElement>this;
+            currItem.remove();
+        }
+        
+    }
     //Getting u.list and appending the new li
     document.querySelector("#roster > ul").appendChild(studentLi);
 }
