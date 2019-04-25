@@ -18,18 +18,18 @@
     <main>
         <form>
             <label for="first-name">First Name: </label>
-            <input type="text" id="first-name">
-            <span class="required">*</span>
+            <input type="text" id="first-name" data-required>
+            <span class="required" data-msg="Did you forget your name?">*</span>
             <br><br>
 
             <label for="last-name">last Name: </label>
-            <input type="text" id="last-name">
-            <span class="required">*</span>
+            <input type="text" id="last-name" data-required>
+            <span class="required" data-msg="Hint: it's the same as your dads">*</span>
             <br><br>
 
             <label for="dob">Date of Birth: </label>
-            <input type="text" id="dob">
-            <span class="required">*</span>
+            <input type="text" id="dob" data-required>
+            <span class="required" data-msg="Just count backwards">*</span>;
             <br><br>
         </form>
 

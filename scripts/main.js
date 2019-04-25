@@ -1,3 +1,27 @@
+window.onload = function () {
+    var regButton = document.querySelector("main > button");
+    regButton.onclick = registerStudent;
+};
+function registerStudent() {
+    if (isValid()) {
+        var nextStudent = getStudent();
+        displayStudent(nextStudent);
+    }
+}
+function isValid() {
+    var reqElems = document.querySelectorAll("main input[data-required]");
+    var valid = true;
+    for (var i = 0; i < reqElems.length; i++) {
+        var currInput = reqElems[i];
+        if (currInput.value.trim() == "") {
+            var span = currInput.nextElementSibling;
+            var msg = span.getAttribute("data-msg");
+            span.innerHTML = msg;
+            valid = false;
+        }
+    }
+    return valid;
+}
 function getStudent() {
     var newStu = new Student();
     newStu.firstName = document.getElementById("first-name").value;

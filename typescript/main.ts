@@ -1,6 +1,6 @@
 /*margin pushes away from other things
 padding pushes it around within the element
-border goes around the element
+border goes around the element*/
 
 
 window.onload = function(){
@@ -9,10 +9,29 @@ window.onload = function(){
 }
 
 function registerStudent(){
-    let nextStudent:Student = getStudent();
-    displayStudent(nextStudent);
+    if(isValid()){
+        let nextStudent:Student = getStudent();
+        displayStudent(nextStudent);
+    }
+    
 }
 
+function isValid():boolean{
+    //validate all required elements
+    let reqElems = document.querySelectorAll("main input[data-required]");
+    let valid = true;
+    for (let i = 0; i < reqElems.length; i++) {
+        let currInput = <HTMLInputElement>reqElems[i];
+        if(currInput.value.trim() == ""){
+            //display error message
+            let span = currInput.nextElementSibling;
+            let msg = span.getAttribute("data-msg");
+            span.innerHTML = msg;
+            valid = false;
+        }
+    }
+    return valid;
+}
 /**
  * Gets user input from the form and wraps it in a student object
  */
