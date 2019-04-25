@@ -1,11 +1,3 @@
-window.onload = function () {
-    var regButton = document.querySelector("main > button");
-    regButton.onclick = registerStudent;
-};
-function registerStudent() {
-    var nextStudent = getStudent();
-    displayStudent(nextStudent);
-}
 function getStudent() {
     var newStu = new Student();
     newStu.firstName = document.getElementById("first-name").value;

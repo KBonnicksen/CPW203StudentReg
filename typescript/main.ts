@@ -1,3 +1,7 @@
+/*margin pushes away from other things
+padding pushes it around within the element
+border goes around the element
+
 
 window.onload = function(){
     let regButton:HTMLButtonElement = document.querySelector("main > button");
@@ -16,7 +20,9 @@ function getStudent():Student{
     let newStu = new Student();
     newStu.firstName = (<HTMLInputElement>document.getElementById("first-name")).value;
     newStu.lastName = (<HTMLInputElement>document.getElementById("last-name")).value;
-
+    /*if(newStu.firstName.trim() == "" || newStu.lastName.trim() == ""){
+        this.nextElementSibling.innerText = "Please enter a valid " + 
+    }*/
     return newStu;
 }
 
@@ -33,6 +39,7 @@ function displayStudent(currStudent:Student){
         
     }
     //Getting u.list and appending the new li
+    
     document.querySelector("#roster > ul").appendChild(studentLi);
 }
 

@@ -1,4 +1,49 @@
+*{
+    font-family: 'Shadows Into Light', cursive;
+}
+
 span[class=required]{
     color: red;
     font-style: italic;
+}
+
+header{
+    text-align: center;
+    color: rgb(224, 224, 19);
+    background-color: rgb(107, 33, 107);
+    border: .2em solid rgb(224, 224, 19);
+    margin-bottom: 2%;
+    margin-top: 1%;
+}
+
+main label{
+    margin-right: 2%;
+    width: 8%;
+    display: inline-block;
+}
+
+main input[type=text]{
+    padding: .4em;
+    border-radius: .05em;
+}
+main > button{
+    cursor: pointer;
+}
+
+body{
+    margin: 0% 8%;
+}
+
+main{
+    margin-left: 2%;
+}
+
+@media only screen and (max-width: 600px){
+    body{
+        margin: 0px 3%;
+    }
+
+    header{
+        font-family: 'Courier New', Courier, monospace;
+    }
 }
